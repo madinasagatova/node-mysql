@@ -43,8 +43,8 @@ app.get('/createemployee', (req, res) =>{
 });
 
 //Insert employee
-app.get('/employee1', (req, res ) =>{
-    let post = {name: 'Jake Smith', designation: "Chief Executive Officer"}
+app.get('/employee1', (req, res) =>{
+    let post = {name: 'Jake Smith', designation: "Chief Executive Officer"};
     let sql = 'INSERT INTO employee SET ?'
     let query = db.query(sql, post, err =>{
         if (err){
