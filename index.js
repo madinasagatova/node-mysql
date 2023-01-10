@@ -54,6 +54,17 @@ app.get('/employee1', (req, res) =>{
     });
 });
 
+//select employee
+app.get('/employee',(req, res) =>{
+    let sql = 'SELECT * FROM employee'
+    let query = db.query(sql, (err, results) =>{
+        if (err){
+            throw err;
+        }
+        console.log(results);
+        res.send('Employee details fetched');
+    });
+});
 //listening server on port 3000
 app.listen('3000', () =>{
     console.log('Server started on port 3000');
