@@ -85,7 +85,7 @@ app.get('/deleteemployee/:id', (req, res) =>{
         if (err){
             throw err;
         }
-        res.send('Emplyee deleted ');
+        res.send('Employee deleted ');
     });
 });
 //listening server on port 3000
