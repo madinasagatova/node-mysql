@@ -65,6 +65,18 @@ app.get('/employee',(req, res) =>{
         res.send('Employee details fetched');
     });
 });
+
+//update employee
+app.get('/updateemployee/:id', (req, res) =>{
+    let newName = 'Updated name'
+    let sql = 'UPDATE employee SET name = `${newName}` WHERE id = ${req.param.id}'
+    let query = db.query(sql, err => {
+        if(err){
+            throw err;
+        }
+        res.send('Employee updated');
+    });
+});
 //listening server on port 3000
 app.listen('3000', () =>{
     console.log('Server started on port 3000');
