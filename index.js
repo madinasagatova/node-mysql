@@ -42,6 +42,19 @@ app.get('/createemployee', (req, res) =>{
     });
 });
 
+//Insert employee
+app.get('/employee1', (req, res ) =>{
+    let post = {name: 'Jake Smith', designation: "Chief Executive Officer"}
+    let sql = 'INSERT INTO employee SET ?'
+    let query = db.query(sql, post, err =>{
+        if (err){
+            throw err;
+        }
+        res.send('Employee added')
+    });
+});
+
+//listening server on port 3000
 app.listen('3000', () =>{
     console.log('Server started on port 3000');
 });
