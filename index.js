@@ -69,7 +69,7 @@ app.get('/employee',(req, res) =>{
 //update employee
 app.get('/updateemployee/:id', (req, res) =>{
     let newName = 'Updated name'
-    let sql = 'UPDATE employee SET name = `${newName}` WHERE id = ${req.param.id}'
+    let sql = `UPDATE employee SET name = '${newName}' WHERE id = ${req.params.id}`
     let query = db.query(sql, err => {
         if(err){
             throw err;
